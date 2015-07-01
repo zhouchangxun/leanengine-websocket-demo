@@ -1,0 +1,22 @@
+{
+  "name": "leanengine-websocket-demo",
+  "version": "1.0.0",
+  "description": "LeanENgine websocket demo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "LeanEngine",
+    "websocket",
+    "BaaS"
+  ],
+  "author": "asaka",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.3.2",
+    "express": "^4.13.0",
+    "express-ws": "^0.2.6",
+    "leanengine": "^0.1.4"
+  }
+}
