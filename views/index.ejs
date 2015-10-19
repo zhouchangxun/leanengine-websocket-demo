@@ -26,7 +26,7 @@ body {
   <script src="http://terminal.jcubic.pl/js/jquery.terminal-0.8.8.min.js"></script>
   <script>
 jQuery(function($, undefined) {
-  var url = 'ws://aaaaa.avosapps.com/echo';
+  var url = 'ws://websocket.avosapps.com/echo';
   var connection = null;
 
   $('#term').terminal(function(command, term) {
@@ -40,7 +40,7 @@ jQuery(function($, undefined) {
     prompt: 'ws> ',
     onInit: function(terminal) {
       terminal.echo('connecting webscoket on ' + url + ' ...');
-      connection = new WebSocket('ws://html5rocks.websocket.org/echo');
+      connection = new WebSocket(url);
       connection.onopen = function() {
         terminal.echo('connected!');
       };
