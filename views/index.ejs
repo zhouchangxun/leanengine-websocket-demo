@@ -26,7 +26,7 @@ body {
   <script src="http://terminal.jcubic.pl/js/jquery.terminal-0.8.8.min.js"></script>
   <script>
 jQuery(function($, undefined) {
-  var url = 'ws://websocket.avosapps.com/echo';
+  var url = 'ws://' + window.location.host + '/echo';
   var connection = null;
 
   $('#term').terminal(function(command, term) {
@@ -50,6 +50,10 @@ jQuery(function($, undefined) {
       connection.onmessage = function(e) {
         terminal.echo('< ' + e.data);
       };
+      connection.onclose = function(e) {
+        terminal.echo('connection closed!');
+        connection = null;
+      }
     },
   });
 });

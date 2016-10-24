@@ -1,6 +1,6 @@
 {
   "name": "leanengine-websocket-demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "LeanENgine websocket demo",
   "main": "server.js",
   "scripts": {
@@ -18,5 +18,8 @@
     "express": "^4.13.0",
     "express-ws": "^0.2.6",
     "leanengine": "^0.1.4"
+  },
+  "engines":{
+    "node": "4.x"
   }
 }
