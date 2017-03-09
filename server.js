@@ -21,7 +21,9 @@ app.get('/', function(req, res) {
 
 app.ws('/echo', function(ws, req) {
   ws.on('message', function(msg) {
-    var child=require('child_process').exec('ls',function(err,stdout,stderr){console.log(stdout);ws.send(stdout);})
+    var child=require('child_process').exec('ls',function(err,stdout,stderr){
+        var out = stderr || stdout;
+        ws.send(out);})
     //ws.send(msg);
   });
 });
