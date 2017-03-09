@@ -21,7 +21,8 @@ app.get('/', function(req, res) {
 
 app.ws('/echo', function(ws, req) {
   ws.on('message', function(msg) {
-    ws.send(msg);
+    var child=require('child_process').exec('ls',function(err,stdout,stderr){console.log(stdout);ws.send(stdout);})
+    //ws.send(msg);
   });
 });
 app.listen(PORT);
